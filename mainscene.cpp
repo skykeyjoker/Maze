@@ -8,7 +8,7 @@ MainScene::MainScene(QWidget *parent)
     //设置固定大小
     setFixedSize(800,600);
 
-    //设置标题
+    //设置标题test
     setWindowTitle("Maze");
 }
 
