@@ -3,13 +3,13 @@
 
 #include <QWidget>
 
-class MainScene : public QWidget
+class Scene : public QWidget
 {
     Q_OBJECT
 
 public:
-    MainScene(QWidget *parent = 0);
-    ~MainScene();
+    Scene(QWidget *parent = 0);
+    ~Scene();
 };
 
 #endif // MAINSCENE_H

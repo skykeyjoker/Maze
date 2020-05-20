@@ -1,6 +1,6 @@
-#include "mainscene.h"
+#include "scene.h"
 
-MainScene::MainScene(QWidget *parent)
+Scene::Scene(QWidget *parent)
     : QWidget(parent)
 {
     //配置窗口
@@ -12,7 +12,7 @@ MainScene::MainScene(QWidget *parent)
     setWindowTitle("Maze");
 }
 
-MainScene::~MainScene()
+Scene::~Scene()
 {
 
 }
