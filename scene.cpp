@@ -1,6 +1,6 @@
-#include "mainscene.h"
+#include "scene.h"
 
-MainScene::MainScene(QWidget *parent)
+Scene::Scene(QWidget *parent)
     : QWidget(parent)
 {
     //配置窗口
@@ -8,11 +8,11 @@ MainScene::MainScene(QWidget *parent)
     //设置固定大小
     setFixedSize(800,600);
 
-    //设置标题
+    //设置标题test
     setWindowTitle("Maze");
 }
 
-MainScene::~MainScene()
+Scene::~Scene()
 {
 
 }
