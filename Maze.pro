@@ -25,7 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        scene.cpp
+    mainscene.cpp \
+    scene.cpp \
+    gamescene.cpp
 
 HEADERS += \
-    scene.h
+    mainscene.h \
+    scene.h \
+    gamescene.h
