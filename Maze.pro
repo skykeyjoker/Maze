@@ -27,9 +27,13 @@ SOURCES += \
         main.cpp \
     mainscene.cpp \
     scene.cpp \
-    gamescene.cpp
+    gamescene.cpp \
+    obj.cpp \
+    pushbtn.cpp
 
 HEADERS += \
     mainscene.h \
     scene.h \
-    gamescene.h
+    gamescene.h \
+    obj.h \
+    pushbtn.h

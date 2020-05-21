@@ -1,0 +1,10 @@
+#include "gamescene.h"
+
+GameScene::GameScene(QString bgPic)
+{
+    //设置窗口固定尺寸
+    setFixedSize(800,600);
+    setParent(0);
+    //设置窗口默认背景
+    this->bgPic=bgPic;
+}

@@ -13,6 +13,8 @@ public:
 
     //绘图事件
     void paintEvent(QPaintEvent *);
+
+    //设置背景
     void setBg(QString bgPic);
 };
 

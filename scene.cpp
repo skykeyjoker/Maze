@@ -9,6 +9,7 @@ Scene::Scene(QWidget *parent,QString bgPic)
 
 void Scene::paintEvent(QPaintEvent *)
 {
+    //绘制窗口背景
     QPainter painter(this);
     QPixmap pix;
     pix.load(bgPic);
