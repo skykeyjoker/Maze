@@ -29,11 +29,13 @@ SOURCES += \
     scene.cpp \
     gamescene.cpp \
     obj.cpp \
-    pushbtn.cpp
+    pushbtn.cpp \
+    Maze.cpp
 
 HEADERS += \
     mainscene.h \
     scene.h \
     gamescene.h \
     obj.h \
-    pushbtn.h
+    pushbtn.h \
+    Maze.h
