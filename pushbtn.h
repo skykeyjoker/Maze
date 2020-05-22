@@ -10,9 +10,12 @@ class PushBtn : public QPushButton
     QString pressPic;
 public:
     PushBtn(QString normalPic,QString pressPic="");
-    void paintEvent(QPaintEvent *);
     void setNormalPic(QString normalPic);
     void setPressPic(QString pressPic);
+
+    //重写鼠标事件
+    void mousePressEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e);
 };
 
 #endif // PUSHBTN_H

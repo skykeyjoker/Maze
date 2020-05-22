@@ -7,7 +7,6 @@ class Obj : public QWidget
 {
     Q_OBJECT
     QString pic;
-    int sizeH,sizeW;
 public:
     explicit Obj(QWidget *parent = nullptr);
 
