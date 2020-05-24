@@ -1,15 +1,25 @@
 #include "scene.h"
+#include<QPainter>
 
-Scene::Scene(QWidget *parent)
-    : QWidget(parent)
+Scene::Scene(QWidget *parent,QString bgPic)
+    : QWidget(parent),bgPic(bgPic)
 {
-    //配置窗口
-
-    //设置固定大小
     setFixedSize(800,600);
+}
 
-    //设置标题test
-    setWindowTitle("Maze");
+void Scene::paintEvent(QPaintEvent *)
+{
+    //绘制窗口背景
+    QPainter painter(this);
+    QPixmap pix;
+    pix.load(bgPic);
+    painter.drawPixmap(0,0,this->width(),this->height(),pix);
+}
+
+void Scene::setBg(QString bgPic)
+{
+    this->bgPic=bgPic;
+    this->update();
 }
 
 Scene::~Scene()
