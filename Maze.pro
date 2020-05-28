@@ -43,3 +43,6 @@ HEADERS += \
     Maze.h \
     point.h \
     walls.h
+
+RESOURCES += \
+    resource.qrc
