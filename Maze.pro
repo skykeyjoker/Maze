@@ -30,7 +30,9 @@ SOURCES += \
     gamescene.cpp \
     obj.cpp \
     pushbtn.cpp \
-    Maze.cpp
+    Maze.cpp \
+    point.cpp \
+    walls.cpp
 
 HEADERS += \
     mainscene.h \
@@ -38,4 +40,6 @@ HEADERS += \
     gamescene.h \
     obj.h \
     pushbtn.h \
-    Maze.h
+    Maze.h \
+    point.h \
+    walls.h
