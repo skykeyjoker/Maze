@@ -1,6 +1,7 @@
 #ifndef MAZE_H
 #define MAZE_H
 #include "Point.h"
+#include <vector>
 class Maze :extern public Obj
 {
 public:
