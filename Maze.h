@@ -16,7 +16,6 @@ public:
 	/*The Maze will be generated in [0,x),[0,y)
 	totally x*y squares */
 	Maze(QWidget &parent,QString pic,Point size, Point startLoc, Point targetLoc,int lvl);
-	~Maze();
 	void setSize(Point size);
 	void makeMaze(int lvl);
 	Point getStartLoc();
