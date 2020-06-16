@@ -5,9 +5,9 @@
 
 class TargetPoint:public Obj
 {
-	private:
+private:
 	Point loc;
-	public:
+public:
 	TargetPoint(QWidget *parent,QString pic,Point loc);
 	Point getLoc();
 	void setLoc(Point loc);

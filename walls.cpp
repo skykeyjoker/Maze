@@ -1,8 +1,8 @@
 #include "walls.h"
 
-walls::walls(char* type)
+Walls::Walls(char* type)
 {   this->type=new char[10];
     this->type=type;
 }
 
-char* getType(){return *type;}
+char* Walls::getType(){return type;}

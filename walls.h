@@ -2,10 +2,10 @@
 #define WALLS_H
 
 
-class walls
+class Walls
 {
 public:
-    walls(char* type);
+    Walls(char* type=nullptr);
     char* getType();
 private:
     char* type;

@@ -30,9 +30,11 @@ SOURCES += \
     gamescene.cpp \
     obj.cpp \
     pushbtn.cpp \
-    Maze.cpp \
     point.cpp \
-    walls.cpp
+    walls.cpp\
+    StartPoint.cpp\
+    TargetPoint.cpp\
+    Wall.cpp
 
 HEADERS += \
     mainscene.h \
@@ -40,9 +42,11 @@ HEADERS += \
     gamescene.h \
     obj.h \
     pushbtn.h \
-    Maze.h \
     point.h \
-    walls.h
+    walls.h\
+    StartPoint.h\
+    TargetPoint.h\
+    Wall.h
 
 RESOURCES += \
     resource.qrc

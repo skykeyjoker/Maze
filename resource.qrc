@@ -24,5 +24,7 @@
         <file>Resource/walls/updown.png</file>
         <file>Resource/walls/upleft.png</file>
         <file>Resource/walls/upright.png</file>
+        <file>Resource/mainMenu.bmp</file>
+        <file>Resource/name.png</file>
     </qresource>
 </RCC>
