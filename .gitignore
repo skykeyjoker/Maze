@@ -1,2 +1,8 @@
 *.user
+<<<<<<< HEAD
+*.sublime-project
+*.exe
+*.sublime-workspace
+=======
 ~$ze build.doc
+>>>>>>> feature1
