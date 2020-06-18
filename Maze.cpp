@@ -1,18 +1,19 @@
 #include "Maze.h"
+#include <QWidget>
 using namespace std;
-Maze::void setSize(Point size)
+void Maze::setSize(Point size)
 {
 	this->size=size;
-};
-Maze:: Point getStartLoc()
+}
+Point Maze::getStartLoc()
 {
 	return this->startLoc;
-};
-Maze:: Point getTargetLoc()
+}
+Point Maze::getTargetLoc()
 {
 	return this->targetLoc;
-};
-Maze::Maze(QWidget &parent,QString pic,Point size, Point startLoc, Point targetLoc,int lvl)
+}
+Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent)
 {
 	srand(time(NULL));
 	this->startLoc=startLoc;

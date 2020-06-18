@@ -30,10 +30,6 @@ GameScene::GameScene(QString bgPic)
             upleft = ":/Resource/walls/upleft.png",
             upright = ":/Resource/walls/upright.png";
 
-    TargetPoint *targetPoint = new TargetPoint(Point(0, 0), ":/Resource/trophy.png");
-    targetPoint->setParent(this);
-    targetPoint->move(100, 100);
-
     this->player = new Player(Point(0, 0), ":/Resource/slime3jump.gif");
     this->player->setParent(this);
 }
