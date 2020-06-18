@@ -8,7 +8,7 @@ class StartPoint:public Obj
 private:
     Point loc;
 public:
-	StartPoint(QWidget *parent,QString pic,Point loc);
+    StartPoint(Point loc, QString pic = "", QWidget *parent = nullptr);
 	Point getLoc();
 	void setLoc(Point loc);
 		

@@ -6,12 +6,12 @@
 class TargetPoint:public Obj
 {
 private:
-	Point loc;
+    Point loc;
 public:
-	TargetPoint(QWidget *parent,QString pic,Point loc);
-	Point getLoc();
-	void setLoc(Point loc);
-		
+    TargetPoint(Point loc, QString pic = "", QWidget *parent = nullptr);
+    Point getLoc();
+    void setLoc(Point loc);
+
 };
 
 #endif

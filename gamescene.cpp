@@ -2,6 +2,12 @@
 #include "walls.h"
 #include "Wall.h"
 #include "point.h"
+#include "StartPoint.h"
+#include "TargetPoint.h"
+#include "player.h"
+#include <QKeyEvent>
+#include <QDebug>
+#include <QObject>
 
 GameScene::GameScene(QString bgPic)
 {
@@ -24,7 +30,37 @@ GameScene::GameScene(QString bgPic)
             upleft = ":/Resource/walls/upleft.png",
             upright = ":/Resource/walls/upright.png";
 
-    Wall *testWall = new Wall(up, Point(0, 0));
-    testWall->setParent(this);
-    testWall->move(100, 100);
+    TargetPoint *targetPoint = new TargetPoint(Point(0, 0), ":/Resource/trophy.png");
+    targetPoint->setParent(this);
+    targetPoint->move(100, 100);
+
+    this->player = new Player(Point(0, 0), ":/Resource/slime3jump.gif");
+    this->player->setParent(this);
+}
+
+void GameScene::keyPressEvent(QKeyEvent *e){
+    if(e->key()==Qt::Key_Left || e->key()==Qt::Key_A) GameScene::moveLeft();
+    if(e->key()==Qt::Key_Right || e->key()==Qt::Key_D) GameScene::moveRight();
+    if(e->key()==Qt::Key_Up || e->key()==Qt::Key_W) GameScene::moveUp();
+    if(e->key()==Qt::Key_Down || e->key()==Qt::Key_S) GameScene::moveDown();
+}
+
+void GameScene::moveUp(){
+    int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
+    if(y>=0) this->player->setLoc(Point(x, y-1));
+}
+
+void GameScene::moveDown(){
+    int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
+    if(1) this->player->setLoc(Point(x, y+1));
+}
+
+void GameScene::moveLeft(){
+    int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
+    if(x>=0) this->player->setLoc(Point(x-1, y));
+}
+
+void GameScene::moveRight(){
+    int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
+    if(1) this->player->setLoc(Point(x+1, y));
 }

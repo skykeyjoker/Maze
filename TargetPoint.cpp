@@ -1,5 +1,5 @@
 #include "TargetPoint.h"
-TargetPoint::TargetPoint(QWidget *parent,QString pic,Point loc):
+TargetPoint::TargetPoint(Point loc,QString pic,QWidget *parent):
     Obj(parent)
 {
 	this->loc=loc;

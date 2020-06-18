@@ -1,5 +1,5 @@
 #include "StartPoint.h"
-StartPoint::StartPoint(QWidget *parent,QString pic,Point loc):
+StartPoint::StartPoint(Point loc,QString pic,QWidget *parent):
     Obj(parent)
 {
 	this->loc=loc;	
