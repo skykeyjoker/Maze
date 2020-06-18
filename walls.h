@@ -1,14 +1,14 @@
 #ifndef WALLS_H
 #define WALLS_H
+#include <QString>
 
-
-class walls
+class Walls
 {
 public:
-    walls(char* type);
-    char* getType();
+    Walls(QString type = "");
+    QString getType();
 private:
-    char* type;
+    QString type;
 };
 
 #endif // WALLS_H

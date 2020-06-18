@@ -2,10 +2,10 @@
 #define POINT_H
 
 
-class point
+class Point
 {
 public:
-    point(int x,int y);
+    Point(int x=0,int y=0);
     int getX();
     int getY();
     void setX(int x);

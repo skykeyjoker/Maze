@@ -1,11 +1,14 @@
 #include "Wall.h"
-Walls Wall:: getType(){return this->type;} 
+#include "walls.h"
 
-Wall::Wall (Qwidget *parent,QString pic,Point loc):
-	Obj(QWidget *parent)
+Wall::Wall(Walls walls,Point loc, QWidget *parent):
+    Obj(parent)
 {
-	this->loc=loc;
-	this->setPic(QString pic);;
+    this->type = walls;
+    this->loc = loc;
+    this->setPic(this->type.getType());
 }
+
+Walls Wall:: getType(){return this->type;}
 
 

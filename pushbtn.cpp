@@ -1,14 +1,14 @@
 #include "pushbtn.h"
 #include <QPainter>
 
-PushBtn::PushBtn(QString normalPic,QString pressPic="")
+PushBtn::PushBtn(QString normalPic,QString pressPic)
 {
     //设置弹起和按下图片
     this->setNormalPic(normalPic);
     this->setPressPic(pressPic);
 
     //设置按钮无边框
-    this->setStyleSheet("QPushBotton{border:0px;}");
+    this->setStyleSheet("QPushButton{border:0px;}");
 
     //初始化按钮图片
     QPixmap pix;
