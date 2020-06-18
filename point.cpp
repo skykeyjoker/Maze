@@ -1,11 +1,11 @@
 #include "point.h"
 
-point::point(int x,int y){this->x=x;this->y=y;}
+Point::Point(int x,int y){this->x=x;this->y=y;}
 
-int getX(){return x;}
+int Point::getX(){return this->x;}
 
-int getY(){return y;}
+int Point::getY(){return this->y;}
 
-int setX(int x){this->x=x;}
+void Point::setX(int x){this->x=x;}
 
-int setY(int y){this->y=y;}
+void Point::setY(int y){this->y=y;}

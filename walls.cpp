@@ -1,8 +1,7 @@
 #include "walls.h"
 
-walls::walls(char* type)
-{   this->type=new char[10];
+Walls::Walls(QString type){
     this->type=type;
 }
 
-char* getType(){return *type;}
+QString Walls::getType(){return type;}

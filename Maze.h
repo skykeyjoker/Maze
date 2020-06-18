@@ -5,17 +5,19 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include <QWidget>
+#include <obj.h>
 using namespace std;
 struct towards
 {
 	bool up,down,left,right;
-}
-class Maze :extern public Obj
+};
+class Maze :public Obj
 {
 public:
 	/*The Maze will be generated in [0,x),[0,y)
 	totally x*y squares */
-	Maze(QWidget &parent,QString pic,Point size, Point startLoc, Point targetLoc,int lvl);
+    Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent=nullptr);
 	void setSize(Point size);
 	void makeMaze(int lvl);
 	Point getStartLoc();

@@ -8,12 +8,11 @@
 class Wall:public Obj
 {
 	private:
-	Point loc;//墙的坐标 
-	Walls type;//墙的类型 
+	Point loc;//澧欑殑鍧愭爣 
+	Walls type;//澧欑殑绫诲瀷 
 	public:
-	wall(Qwidget *parent,QString pic,Point loc);
-	Walls getType();
-		
+    Wall(Walls walls,Point loc,QWidget *parent = nullptr);
+    Walls getType();
 };
 
 #endif

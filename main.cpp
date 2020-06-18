@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainScene w;
+    MainScene w(":/Resource/mainMenu.bmp");
     w.show();
 
     return a.exec();
