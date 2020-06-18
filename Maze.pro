@@ -35,7 +35,8 @@ SOURCES += \
     StartPoint.cpp\
     TargetPoint.cpp\
     Wall.cpp \
-    player.cpp
+    player.cpp \
+    Maze.cpp
 
 HEADERS += \
     mainscene.h \
@@ -48,7 +49,8 @@ HEADERS += \
     StartPoint.h\
     TargetPoint.h\
     Wall.h \
-    player.h
+    player.h \
+    Maze.h
 
 RESOURCES += \
     resource.qrc
