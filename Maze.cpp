@@ -33,7 +33,7 @@ void Maze::makeMaze(int lvl)
 			tot.push_back(t);
 		}
 	}
-	shuffle(tot.begin(),tot.end());
+    random_shuffle(tot.begin(),tot.end());
 	vector<int>rd(4);
 	for (int i=0;i<4;++i)
 	{
@@ -42,7 +42,7 @@ void Maze::makeMaze(int lvl)
 	for (std::vector<Point>::iterator i = tot.begin(); i != tot.end(); ++i)
 	{
 		int id=i->getX()+i->getY()*x;
-		shuffle(rd.begin(),rd.end());
+        random_shuffle(rd.begin(),rd.end());
 		for (int j=0;j<3;++j)
 		{
 			if(rd[j]==0)
@@ -92,7 +92,7 @@ void Maze::makeMaze(int lvl)
 			if(!connect[i][j].down)ck+=2;
 			if(!connect[i][j].left)ck+=4;
 			if(!connect[i][j].right)ck+=8;
-			if(ck==)walls[i][j].type="all";
+            if(ck==0)walls[i][j].type="all";
 			if(ck==1)walls[i][j].type="up";
 			if(ck==2)walls[i][j].type="down";
 			if(ck==3)walls[i][j].type="updown";
@@ -111,7 +111,7 @@ void Maze::makeMaze(int lvl)
 		}
 	}
 }
-Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent=nullptr)
+Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent)
 {
 
 	this->startLoc=startLoc;
