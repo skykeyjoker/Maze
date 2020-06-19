@@ -17,6 +17,7 @@ struct Type{
                   updown = ":/Resource/walls/updown.png",
                   upleft = ":/Resource/walls/upleft.png",
                   upright = ":/Resource/walls/upright.png";
+                //all = ":/Resource/walls/all.png"
 };
 
 class Walls
@@ -24,8 +25,8 @@ class Walls
 public:
     Walls(QString type = "");
     QString getType();
-private:
     QString type;
+private:
 };
 
 #endif // WALLS_H

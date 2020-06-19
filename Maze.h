@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <QWidget>
 #include <obj.h>
+#include<wall.h>
 using namespace std;
 struct towards
 {
@@ -22,6 +23,7 @@ public:
 	void makeMaze(int lvl);
 	Point getStartLoc();
 	Point getTargetLoc();
+    vector<vector<Walls> >walls;
 private:
 	Point startLoc,targetLoc,size;
 	int lvl;

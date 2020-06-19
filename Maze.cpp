@@ -13,22 +13,20 @@ Point Maze::getTargetLoc()
 {
 	return this->targetLoc;
 }
-Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent)
+void Maze::makeMaze(int lvl)
 {
 	srand(time(NULL));
-	this->startLoc=startLoc;
-	this->targetLoc=targetLoc;
-	this->lvl=lvl;
-	this->size=size;
 	int x=size.getX();
 	int y=size.getY();
 	connect.reserve(y);
+	walls.reserve(y);
 	vector<Point>tot;
 	tot.reserve(x*y);
 	bcj isconnect(x*y);
 	for (int i=0;i<y;++i)
 	{
-		connect[y].reserve(x);
+		connect[i].reserve(x);
+		walls[i].reserve(x);
 		for (int j=0;j<x;++j)
 		{
 			Point t(i,j);
@@ -85,5 +83,40 @@ Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWid
 			}
 		}
 	}
-	//todo
+	for(int i=0;i<y;++i)
+	{
+		for(int j=0;j<x;++j)
+		{
+			int ck=0;
+			if(!connect[i][j].up)ck+=1;
+			if(!connect[i][j].down)ck+=2;
+			if(!connect[i][j].left)ck+=4;
+			if(!connect[i][j].right)ck+=8;
+			if(ck==)walls[i][j].type="all";
+			if(ck==1)walls[i][j].type="up";
+			if(ck==2)walls[i][j].type="down";
+			if(ck==3)walls[i][j].type="updown";
+			if(ck==4)walls[i][j].type="left";
+			if(ck==5)walls[i][j].type="upleft";
+			if(ck==6)walls[i][j].type="downleft";
+			if(ck==7)walls[i][j].type="noright";
+			if(ck==8)walls[i][j].type="right";
+			if(ck==9)walls[i][j].type="upright";
+			if(ck==10)walls[i][j].type="downright";
+			if(ck==11)walls[i][j].type="noleft";
+			if(ck==12)walls[i][j].type="leftright";
+			if(ck==13)walls[i][j].type="noleft";
+			if(ck==14)walls[i][j].type="noup";
+
+		}
+	}
+}
+Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent=nullptr)
+{
+
+	this->startLoc=startLoc;
+	this->targetLoc=targetLoc;
+	this->lvl=lvl;
+	this->size=size;
+
 }
