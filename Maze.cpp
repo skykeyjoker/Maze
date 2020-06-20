@@ -22,7 +22,7 @@ void Maze::makeMaze(int lvl)
 	walls.reserve(y);
 	vector<Point>tot;
 	tot.reserve(x*y);
-	bcj isconnect(x*y);
+	bcj isconnect((x+1)*(y+1));
 	for (int i=0;i<y;++i)
 	{
 		connect[i].reserve(x);
