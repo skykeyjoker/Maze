@@ -47,6 +47,7 @@ struct bcj
     }
     int add(int x,int y)
     {
+        //qDebug()<<"connect:"<<x<<' '<<y<<endl;
         if(x>tot||y>tot)return 0;
         int a=find(x);
         int b=find(y);

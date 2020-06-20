@@ -1,5 +1,6 @@
 #include "Maze.h"
 #include <QWidget>
+#include <QDebug>
 using namespace std;
 void Maze::setSize(Point size)
 {
@@ -44,8 +45,9 @@ void Maze::makeMaze()
 	{
 		int id=i->getX()+i->getY()*x;
         random_shuffle(rd.begin(),rd.end());
-		for (int j=0;j<=3;++j)
+        for (int j=0;j<=3;++j)
 		{
+            //qDebug()<<id<<' '<<j<<i->getX()<<' '<<i->getY()<<endl;
 			if(rd[j]==0)
 			{
 				if(i->getY()==0)continue;
@@ -112,7 +114,7 @@ void Maze::makeMaze()
 			if(ck==14)walls[i][j].type=t.noup;
 
 		}
-	}
+    }
 }
 Maze::Maze(QWidget *parent)
     :Obj(parent)
