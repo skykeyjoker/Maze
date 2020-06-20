@@ -8,7 +8,7 @@
 #include <QWidget>
 #include <obj.h>
 #include<wall.h>
-//#include<QDebug>
+#include<QDebug>
 using namespace std;
 struct towards
 {

@@ -20,14 +20,14 @@ void Maze::makeMaze()
     int x=size.getX();
     int y=size.getY();
 	connect.reserve(y);
-	walls.reserve(y);
+    walls.resize(y);
 	vector<Point>tot;
 	tot.reserve(x*y);
 	bcj isconnect((x+1)*(y+1));
 	for (int i=0;i<y;++i)
 	{
 		connect[i].reserve(x);
-		walls[i].reserve(x);
+        walls[i].resize(x);
 		for (int j=0;j<x;++j)
 		{
 			Point t(i,j);
@@ -94,6 +94,7 @@ void Maze::makeMaze()
 			if(!connect[i][j].left)ck+=4;
 			if(!connect[i][j].right)ck+=8;
 			Type t;
+            //qDebug()<<i<<' '<<j<<' '<<ck<<endl;
             if(ck==0)walls[i][j].type=t.all;
 			if(ck==1)walls[i][j].type=t.up;
 			if(ck==2)walls[i][j].type=t.down;
