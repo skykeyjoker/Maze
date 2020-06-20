@@ -3,7 +3,7 @@
 using namespace std;
 void Maze::setSize(Point size)
 {
-	this->size=size;
+    this->size=size;
 }
 Point Maze::getStartLoc()
 {
@@ -13,11 +13,11 @@ Point Maze::getTargetLoc()
 {
 	return this->targetLoc;
 }
-void Maze::makeMaze(int lvl)
+void Maze::makeMaze()
 {
 	srand(time(NULL));
-	int x=size.getX();
-	int y=size.getY();
+    int x=size.getX();
+    int y=size.getY();
 	connect.reserve(y);
 	walls.reserve(y);
 	vector<Point>tot;
@@ -89,7 +89,7 @@ void Maze::makeMaze(int lvl)
 		{
 			int ck=0;
 			if(!connect[i][j].up)ck+=1;
-			if(!connect[i][j].down)ck+=2;
+            if(!connect[i][j].down)ck+=2;
 			if(!connect[i][j].left)ck+=4;
 			if(!connect[i][j].right)ck+=8;
             if(ck==0)walls[i][j].type="all";
@@ -111,7 +111,8 @@ void Maze::makeMaze(int lvl)
 		}
 	}
 }
-Maze::Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent)
+Maze::Maze(QWidget *parent)
+    :Obj(parent)
 {
 
 	this->startLoc=startLoc;

@@ -18,14 +18,14 @@ class Maze :public Obj
 public:
 	/*The Maze will be generated in [0,x),[0,y)
 	totally x*y squares */
-    Maze(QString pic,Point size, Point startLoc, Point targetLoc,int lvl, QWidget *parent=nullptr);
+    Maze(QWidget *parent=nullptr);
 	void setSize(Point size);
-	void makeMaze(int lvl);
+    void makeMaze();
 	Point getStartLoc();
 	Point getTargetLoc();
     vector<vector<Walls> >walls;
 private:
-	Point startLoc,targetLoc,size;
+    Point startLoc,targetLoc,size;
 	int lvl;
 	vector<vector<towards> >connect;
 };

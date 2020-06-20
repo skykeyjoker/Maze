@@ -5,6 +5,7 @@
 #include "StartPoint.h"
 #include "TargetPoint.h"
 #include "player.h"
+#include "Maze.h"
 #include <QKeyEvent>
 #include <QDebug>
 #include <QObject>
@@ -18,6 +19,10 @@ GameScene::GameScene(QString bgPic)
 
     this->player = new Player(Point(0, 0), ":/Resource/slime3jump.gif");
     this->player->setParent(this);
+    Maze *maze = new Maze();
+    maze->setParent(this);
+    maze->makeMaze();
+    maze->move(200, 200);
 }
 
 void GameScene::keyPressEvent(QKeyEvent *e){

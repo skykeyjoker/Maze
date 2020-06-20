@@ -16,8 +16,8 @@ struct Type{
                   up = ":/Resource/walls/up.png",
                   updown = ":/Resource/walls/updown.png",
                   upleft = ":/Resource/walls/upleft.png",
-                  upright = ":/Resource/walls/upright.png";
-                //all = ":/Resource/walls/all.png"
+                  upright = ":/Resource/walls/upright.png",
+                  all = ":/Resource/walls/blank.png";
 };
 
 class Walls

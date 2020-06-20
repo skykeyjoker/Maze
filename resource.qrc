@@ -26,5 +26,6 @@
         <file>Resource/walls/upright.png</file>
         <file>Resource/mainMenu.bmp</file>
         <file>Resource/name.png</file>
+        <file>Resource/walls/blank.png</file>
     </qresource>
 </RCC>
