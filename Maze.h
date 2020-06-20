@@ -70,7 +70,7 @@ struct bcj
         tot=sum=n;
         f.reserve(n);
         r.reserve(n);
-        for (int i=0;i<=n;i++)
+        for (int i=0;i<n;i++)
         {
             f[i]=i;
         }
