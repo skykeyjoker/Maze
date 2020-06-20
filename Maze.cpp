@@ -20,14 +20,14 @@ void Maze::makeMaze()
 	srand(time(NULL));
     int x=size.getX();
     int y=size.getY();
-	connect.reserve(y);
+	is_connected.reserve(y);
     walls.resize(y);
 	vector<Point>tot;
 	tot.reserve(x*y);
 	bcj isconnect((x+1)*(y+1));
 	for (int i=0;i<y;++i)
 	{
-		connect[i].reserve(x);
+		is_connected[i].reserve(x);
         walls[i].resize(x);
 		for (int j=0;j<x;++j)
 		{
@@ -52,8 +52,8 @@ void Maze::makeMaze()
 			{
 				if(i->getY()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-x))continue;
-				connect[i->getY()][i->getX()].up=true;
-				connect[i->getY()-1][i->getX()].down=true;
+				is_connected[i->getY()][i->getX()].up=true;
+				is_connected[i->getY()-1][i->getX()].down=true;
 				isconnect.add(id,id-x);
 				break;
 			}
@@ -61,8 +61,8 @@ void Maze::makeMaze()
 			{
 				if(i->getY()==y-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+x))continue;
-				connect[i->getY()][i->getX()].down=true;
-				connect[i->getY()+1][i->getX()].up=true;
+				is_connected[i->getY()][i->getX()].down=true;
+				is_connected[i->getY()+1][i->getX()].up=true;
 				isconnect.add(id,id+x);
 				break;
 			}
@@ -70,8 +70,8 @@ void Maze::makeMaze()
 			{
 				if(i->getX()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-1))continue;
-				connect[i->getY()][i->getX()].left=true;
-				connect[i->getY()][i->getX()-1].right=true;
+				is_connected[i->getY()][i->getX()].left=true;
+				is_connected[i->getY()][i->getX()-1].right=true;
 				isconnect.add(id,id-1);
 				break;
 			}
@@ -79,8 +79,8 @@ void Maze::makeMaze()
 			{
 				if(i->getX()==x-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+1))continue;
-				connect[i->getY()][i->getX()].right=true;
-				connect[i->getY()][i->getX()+1].left=true;
+				is_connected[i->getY()][i->getX()].right=true;
+				is_connected[i->getY()][i->getX()+1].left=true;
 				isconnect.add(id,id+1);
 				break;
 			}
@@ -91,10 +91,10 @@ void Maze::makeMaze()
 		for(int j=0;j<x;++j)
 		{
 			int ck=0;
-			if(!connect[i][j].up)ck+=1;
-            if(!connect[i][j].down)ck+=2;
-			if(!connect[i][j].left)ck+=4;
-			if(!connect[i][j].right)ck+=8;
+			if(!is_connected[i][j].up)ck+=1;
+            if(!is_connected[i][j].down)ck+=2;
+			if(!is_connected[i][j].left)ck+=4;
+			if(!is_connected[i][j].right)ck+=8;
 			Type t;
             //qDebug()<<i<<' '<<j<<' '<<ck<<endl;
             if(ck==0)walls[i][j].type=t.all;

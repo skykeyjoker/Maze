@@ -28,7 +28,7 @@ public:
 private:
     Point startLoc,targetLoc,size;
 	int lvl;
-	vector<vector<towards> >connect;
+	vector<vector<towards> >is_connected;
 };
 struct bcj
 {
@@ -47,7 +47,7 @@ struct bcj
     }
     int add(int x,int y)
     {
-        //qDebug()<<"connect:"<<x<<' '<<y<<endl;
+        //qDebug()<<"is_connected:"<<x<<' '<<y<<endl;
         if(x>tot||y>tot)return 0;
         int a=find(x);
         int b=find(y);
