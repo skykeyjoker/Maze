@@ -44,11 +44,12 @@ void Maze::makeMaze()
         random_shuffle(rd,rd+4);
         for (int j=0;j<=3;++j)
 		{
-            //qDebug()<<id<<' '<<j<<tot[i].getX()<<' '<<tot[i].getY()<<endl;
+            qDebug()<<id<<' '<<tot[i].getX()<<' '<<tot[i].getY()<<endl;
 			if(rd[j]==0)
 			{
 				if(tot[i].getY()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-x))continue;
+				qDebug()<<"up\n";
 				is_connected[tot[i].getY()][tot[i].getX()].up=true;
 				is_connected[tot[i].getY()-1][tot[i].getX()].down=true;
 				isconnect.add(id,id-x);
@@ -58,6 +59,7 @@ void Maze::makeMaze()
 			{
 				if(tot[i].getY()==y-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+x))continue;
+				qDebug()<<"down\n";
 				is_connected[tot[i].getY()][tot[i].getX()].down=true;
 				is_connected[tot[i].getY()+1][tot[i].getX()].up=true;
 				isconnect.add(id,id+x);
@@ -67,6 +69,7 @@ void Maze::makeMaze()
 			{
 				if(tot[i].getX()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-1))continue;
+				qDebug()<<"left\n";
 				is_connected[tot[i].getY()][tot[i].getX()].left=true;
 				is_connected[tot[i].getY()][tot[i].getX()-1].right=true;
 				isconnect.add(id,id-1);
@@ -76,6 +79,7 @@ void Maze::makeMaze()
 			{
 				if(tot[i].getX()==x-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+1))continue;
+				qDebug()<<"right\n";
 				is_connected[tot[i].getY()][tot[i].getX()].right=true;
 				is_connected[tot[i].getY()][tot[i].getX()+1].left=true;
 				isconnect.add(id,id+1);
@@ -107,7 +111,7 @@ void Maze::makeMaze()
 			if(ck==10)walls[i][j].type=t.downright;
 			if(ck==11)walls[i][j].type=t.noleft;
 			if(ck==12)walls[i][j].type=t.leftright;
-			if(ck==13)walls[i][j].type=t.noleft;
+			if(ck==13)walls[i][j].type=t.nodown;
 			if(ck==14)walls[i][j].type=t.noup;
 
 		}
