@@ -25,7 +25,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        scene.cpp
+    mainscene.cpp \
+    scene.cpp \
+    gamescene.cpp \
+    obj.cpp \
+    pushbtn.cpp \
+    point.cpp \
+    walls.cpp\
+    StartPoint.cpp\
+    TargetPoint.cpp\
+    Wall.cpp \
+    player.cpp \
+    Maze.cpp
 
 HEADERS += \
-    scene.h
+    mainscene.h \
+    scene.h \
+    gamescene.h \
+    obj.h \
+    pushbtn.h \
+    point.h \
+    walls.h\
+    StartPoint.h\
+    TargetPoint.h\
+    Wall.h \
+    player.h \
+    Maze.h
+
+RESOURCES += \
+    resource.qrc

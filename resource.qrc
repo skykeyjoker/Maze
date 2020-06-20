@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resource/backgroud2.bmp</file>
+        <file>Resource/exit.png</file>
+        <file>Resource/exitdown.png</file>
+        <file>Resource/slime3.png</file>
+        <file>Resource/slime3jump.gif</file>
+        <file>Resource/slimepng.png</file>
+        <file>Resource/start.png</file>
+        <file>Resource/start2.png</file>
+        <file>Resource/startdown.png</file>
+        <file>Resource/trophy.png</file>
+        <file>Resource/walls/down.png</file>
+        <file>Resource/walls/downleft.png</file>
+        <file>Resource/walls/downright.png</file>
+        <file>Resource/walls/left.png</file>
+        <file>Resource/walls/leftright.png</file>
+        <file>Resource/walls/nodown.png</file>
+        <file>Resource/walls/noleft.png</file>
+        <file>Resource/walls/noright.png</file>
+        <file>Resource/walls/noup.png</file>
+        <file>Resource/walls/right.png</file>
+        <file>Resource/walls/up.png</file>
+        <file>Resource/walls/updown.png</file>
+        <file>Resource/walls/upleft.png</file>
+        <file>Resource/walls/upright.png</file>
+        <file>Resource/mainMenu.bmp</file>
+        <file>Resource/name.png</file>
+        <file>Resource/walls/blank.png</file>
+    </qresource>
+</RCC>
