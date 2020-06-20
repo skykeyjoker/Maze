@@ -34,8 +34,10 @@ struct bcj
     vector<int>f;
     vector<int>r;
     int sum;
+    int tot;
     int find(int n)
     {
+        if(n>tot)return 0;
         if(f[n]==n)
             return n;
         else
@@ -44,6 +46,7 @@ struct bcj
     }
     int add(int x,int y)
     {
+        if(x>tot||y>tot)return 0;
         int a=find(x);
         int b=find(y);
         if(a==b)
@@ -63,7 +66,7 @@ struct bcj
     }
     bcj(int n)
     {
-        sum=n;
+        tot=sum=n;
         f.reserve(n);
         r.reserve(n);
         for (int i=1;i<=n;i++)
