@@ -35,7 +35,7 @@ void Maze::makeMaze()
 		}
 	}
     random_shuffle(tot.begin(),tot.end());
-	vector<int>rd(4);
+	vector<int>rd;
 	for (int i=0;i<4;++i)
 	{
 		rd.push_back(i);
@@ -44,7 +44,7 @@ void Maze::makeMaze()
 	{
 		int id=i->getX()+i->getY()*x;
         random_shuffle(rd.begin(),rd.end());
-		for (int j=0;j<3;++j)
+		for (int j=0;j<=3;++j)
 		{
 			if(rd[j]==0)
 			{
