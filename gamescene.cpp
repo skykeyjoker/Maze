@@ -36,7 +36,7 @@ GameScene::GameScene(QString bgPic)
            w[i][j]->setPic(maze->walls[i][j].getType());
            w[i][j]->setType(maze->walls[i][j]);
            w[i][j]->setParent(maze);
-           w[i][j]->move(j*50,i*50);
+           w[i][j]->move(i*50,j*50);
         }
     }
 }
@@ -54,8 +54,8 @@ void GameScene::moveUp(){
     int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
     qDebug()<<w[x][y]->getType().type;
     if(y>0
-//            && w[x][y]->getType().type!=cc.up && w[x][y]->getType().type!=cc.updown && w[x][y]->getType().type!=cc.upright
-//            && w[x][y]->getType().type!=cc.upleft && w[x][y]->getType().type!=cc.noright  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.nodown
+            && w[x][y]->getType().type!=cc.up && w[x][y]->getType().type!=cc.updown && w[x][y]->getType().type!=cc.upright
+            && w[x][y]->getType().type!=cc.upleft && w[x][y]->getType().type!=cc.noright  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.nodown
             )
         this->player->setLoc(Point(x, y-1));
 }
@@ -65,30 +65,30 @@ void GameScene::moveDown(){
     int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
     qDebug()<<w[x][y]->getType().type;
     if(y<7
-//            && w[x][y]->getType().type!=cc.down && w[x][y]->getType().type!=cc.updown && w[x][y]->getType().type!=cc.downright
-//            && w[x][y]->getType().type!=cc.downleft && w[x][y]->getType().type!=cc.noright  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.noup
+            && w[x][y]->getType().type!=cc.down && w[x][y]->getType().type!=cc.updown && w[x][y]->getType().type!=cc.downright
+            && w[x][y]->getType().type!=cc.downleft && w[x][y]->getType().type!=cc.noright  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.noup
             )
         this->player->setLoc(Point(x, y+1));
-    }
+}
 
 void GameScene::moveLeft(){
     Type cc;
     int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
     qDebug()<<w[x][y]->getType().type;
     if(x>0
-//            && w[x][y]->getType().type!=cc.left && w[x][y]->getType().type!=cc.leftright && w[x][y]->getType().type!=cc.upleft
-//           && w[x][y]->getType().type!=cc.downleft && w[x][y]->getType().type!=cc.noup  && w[x][y]->getType().type!=cc.noright && w[x][y]->getType().type!=cc.nodown
+            && w[x][y]->getType().type!=cc.left && w[x][y]->getType().type!=cc.leftright && w[x][y]->getType().type!=cc.upleft
+           && w[x][y]->getType().type!=cc.downleft && w[x][y]->getType().type!=cc.noup  && w[x][y]->getType().type!=cc.noright && w[x][y]->getType().type!=cc.nodown
             )
         this->player->setLoc(Point(x-1, y));
-    }
+}
 
 void GameScene::moveRight(){
     Type cc;
     int x=this->player->getLoc().getX(), y=this->player->getLoc().getY();
     qDebug()<<w[x][y]->getType().type;
     if(x<7
-//            && w[x][y]->getType().type!=cc.right && w[x][y]->getType().type!=cc.leftright && w[x][y]->getType().type!=cc.upright
-//            && w[x][y]->getType().type!=cc.downright && w[x][y]->getType().type!=cc.noup  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.nodown
+            && w[x][y]->getType().type!=cc.right && w[x][y]->getType().type!=cc.leftright && w[x][y]->getType().type!=cc.upright
+            && w[x][y]->getType().type!=cc.downright && w[x][y]->getType().type!=cc.noup  && w[x][y]->getType().type!=cc.noleft && w[x][y]->getType().type!=cc.nodown
             )
         this->player->setLoc(Point(x+1, y));
-    }
+}
