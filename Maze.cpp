@@ -115,9 +115,4 @@ Maze::Maze(QWidget *parent)
     :Obj(parent)
 {
 
-	this->startLoc=startLoc;
-	this->targetLoc=targetLoc;
-	this->lvl=lvl;
-	this->size=size;
-
 }
