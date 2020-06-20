@@ -20,10 +20,21 @@ GameScene::GameScene(QString bgPic)
     this->player = new Player(Point(0, 0), ":/Resource/slime3jump.gif");
     this->player->setParent(this);
     Maze *maze = new Maze();
-    maze->setSize(Point(3, 3));
+    maze->setSize(Point(5, 5));
     maze->setParent(this);
     maze->makeMaze();
     maze->move(200, 200);
+    Wall ***w = new Wall**[maze->getSize().getY()];
+    for (int i=0;i<maze->getSize().getY();++i){
+        w[i] = new Wall*[maze->getSize().getX()];
+        for (int j=0;j<maze->getSize().getX();++j){
+            qDebug()<<i<<j<<maze->walls[i][j].getType();
+            w[i][j] = new Wall();
+            w[i][j]->setPic(maze->walls[i][j].getType());
+            w[i][j]->setParent(this);
+            w[i][j]->move(j*50+200,i*50+200);
+        }
+    }
 }
 
 void GameScene::keyPressEvent(QKeyEvent *e){

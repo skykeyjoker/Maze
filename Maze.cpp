@@ -38,7 +38,7 @@ void Maze::makeMaze()
 	}
     random_shuffle(tot,tot+x*y);
 	int rd[4]={0,1,2,3};
-	for (i = 1; i < x*y; ++i)
+    for (int i = 1; i < x*y; ++i)
 	{
 		int id=tot[i].getX()+tot[i].getY()*x;
         random_shuffle(rd,rd+4);
@@ -117,4 +117,8 @@ Maze::Maze(QWidget *parent)
     :Obj(parent)
 {
 
+}
+
+Point Maze::getSize(){
+    return this->size;
 }

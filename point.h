@@ -6,11 +6,11 @@ class Point
 {
 public:
     Point(int x=0,int y=0);
+    Point(const Point &p);
     int getX();
     int getY();
     void setX(int x);
     void setY(int y);
-private:
     int x;
     int y;
 };

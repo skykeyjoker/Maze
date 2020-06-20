@@ -11,4 +11,7 @@ Wall::Wall(Walls walls,Point loc, QWidget *parent):
 
 Walls Wall:: getType(){return this->type;}
 
-
+void Wall::setType(Walls t){
+    this->type=t;
+    this->setPic(t.type);
+}

@@ -7,12 +7,12 @@
 
 class Wall:public Obj
 {
-	private:
-	Point loc;//墙的坐标 
-	Walls type;//墙的类型 
 	public:
-    Wall(Walls walls,Point loc,QWidget *parent = nullptr);
+    Wall(Walls walls = Walls(" "),Point loc = Point(0, 0),QWidget *parent = nullptr);
     Walls getType();
+    Point loc;//墙的坐标
+    Walls type;//墙的类型
+    void setType(Walls t);
 };
 
 #endif

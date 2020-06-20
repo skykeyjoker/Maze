@@ -21,6 +21,7 @@ public:
 	totally x*y squares */
     Maze(QWidget *parent=nullptr);
 	void setSize(Point size);
+    Point getSize();
     void makeMaze();
 	Point getStartLoc();
 	Point getTargetLoc();
