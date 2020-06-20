@@ -93,21 +93,22 @@ void Maze::makeMaze()
             if(!connect[i][j].down)ck+=2;
 			if(!connect[i][j].left)ck+=4;
 			if(!connect[i][j].right)ck+=8;
-            if(ck==0)walls[i][j].type="all";
-			if(ck==1)walls[i][j].type="up";
-			if(ck==2)walls[i][j].type="down";
-			if(ck==3)walls[i][j].type="updown";
-			if(ck==4)walls[i][j].type="left";
-			if(ck==5)walls[i][j].type="upleft";
-			if(ck==6)walls[i][j].type="downleft";
-			if(ck==7)walls[i][j].type="noright";
-			if(ck==8)walls[i][j].type="right";
-			if(ck==9)walls[i][j].type="upright";
-			if(ck==10)walls[i][j].type="downright";
-			if(ck==11)walls[i][j].type="noleft";
-			if(ck==12)walls[i][j].type="leftright";
-			if(ck==13)walls[i][j].type="noleft";
-			if(ck==14)walls[i][j].type="noup";
+			Type t;
+            if(ck==0)walls[i][j].type=t.all;
+			if(ck==1)walls[i][j].type=t.up;
+			if(ck==2)walls[i][j].type=t.down;
+			if(ck==3)walls[i][j].type=t.updown;
+			if(ck==4)walls[i][j].type=t.left;
+			if(ck==5)walls[i][j].type=t.upleft;
+			if(ck==6)walls[i][j].type=t.downleft;
+			if(ck==7)walls[i][j].type=t.noright;
+			if(ck==8)walls[i][j].type=t.right;
+			if(ck==9)walls[i][j].type=t.upright;
+			if(ck==10)walls[i][j].type=t.downright;
+			if(ck==11)walls[i][j].type=t.noleft;
+			if(ck==12)walls[i][j].type=t.leftright;
+			if(ck==13)walls[i][j].type=t.noleft;
+			if(ck==14)walls[i][j].type=t.noup;
 
 		}
 	}
