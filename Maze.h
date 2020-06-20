@@ -24,16 +24,19 @@ public:
     void makeMaze();
 	Point getStartLoc();
 	Point getTargetLoc();
-    vector<vector<Walls> >walls;
+    // vector<vector<Walls> >walls;
+    Walls walls[30][30];
 private:
     Point startLoc,targetLoc,size;
 	int lvl;
-	vector<vector<towards> >is_connected;
+	// vector<vector<towards> >is_connected;
+    towards is_connected[30][30];
 };
 struct bcj
 {
-    vector<int>f;
-    vector<int>r;
+    // vector<int>f;
+    // vector<int>r;
+    int f[1000],r[1000];
     int sum;
     int tot;
     int find(int n)
@@ -69,8 +72,8 @@ struct bcj
     bcj(int n)
     {
         tot=sum=n;
-        f.reserve(n);
-        r.reserve(n);
+        // f.reserve(n);
+        // r.reserve(n);
         for (int i=0;i<n;i++)
         {
             f[i]=i;

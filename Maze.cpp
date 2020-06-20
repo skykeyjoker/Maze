@@ -20,67 +20,64 @@ void Maze::makeMaze()
 	srand(time(NULL));
     int x=size.getX();
     int y=size.getY();
-	is_connected.reserve(y);
-    walls.resize(y);
-	vector<Point>tot;
-	tot.reserve(x*y);
+	// is_connected.reserve(y);
+    // walls.resize(y);
+	Point tot[1000];
+	// tot.reserve(x*y);
 	bcj isconnect((x+1)*(y+1));
 	for (int i=0;i<y;++i)
 	{
-		is_connected[i].reserve(x);
-        walls[i].resize(x);
+		// is_connected[i].reserve(x);
+        // walls[i].resize(x);
 		for (int j=0;j<x;++j)
 		{
 			Point t(i,j);
-			tot.push_back(t);
+			tot[i*x+j]=t;
+			// tot.push_back(t);
 		}
 	}
-    random_shuffle(tot.begin(),tot.end());
-	vector<int>rd;
-	for (int i=0;i<4;++i)
+    random_shuffle(tot,tot+x*y);
+	int rd[4]={0,1,2,3};
+	for (i = 1; i < x*y; ++i)
 	{
-		rd.push_back(i);
-	}
-	for (std::vector<Point>::iterator i = tot.begin(); i != tot.end(); ++i)
-	{
-		int id=i->getX()+i->getY()*x;
-        random_shuffle(rd.begin(),rd.end());
+		int id=tot[i].getX()+tot[i].getY()*x;
+        random_shuffle(rd,rd+4);
         for (int j=0;j<=3;++j)
 		{
-            //qDebug()<<id<<' '<<j<<i->getX()<<' '<<i->getY()<<endl;
+            //qDebug()<<id<<' '<<j<<tot[i].getX()<<' '<<tot[i].getY()<<endl;
 			if(rd[j]==0)
 			{
-				if(i->getY()==0)continue;
+				if(tot[i].getY()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-x))continue;
-				is_connected[i->getY()][i->getX()].up=true;
-				is_connected[i->getY()-1][i->getX()].down=true;
+				is_connected[tot[i].getY()][tot[i].getX()].up=true;
+				is_connected[tot[i].getY()-1][tot[i].getX()].down=true;
 				isconnect.add(id,id-x);
 				break;
 			}
 			if(rd[j]==1)
 			{
-				if(i->getY()==y-1)continue;
+				if(tot[i].getY()==y-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+x))continue;
-				is_connected[i->getY()][i->getX()].down=true;
-				is_connected[i->getY()+1][i->getX()].up=true;
+				is_connected[tot[i].getY()][tot[i].getX()].down=true;
+				is_connected[tot[i].getY()+1][tot[i].getX()].up=true;
 				isconnect.add(id,id+x);
 				break;
 			}
 			if(rd[j]==2)
 			{
-				if(i->getX()==0)continue;
+				if(tot[i].getX()==0)continue;
 				if(isconnect.find(id)==isconnect.find(id-1))continue;
-				is_connected[i->getY()][i->getX()].left=true;
-				is_connected[i->getY()][i->getX()-1].right=true;
+				is_connected[tot[i].getY()][tot[i].getX()].left=true;
+				is_connected[tot[i].getY()][tot[i].getX()-1].right=true;
 				isconnect.add(id,id-1);
 				break;
 			}
 			if(rd[j]==3)
 			{
-				if(i->getX()==x-1)continue;
+				if(tot[i].getX()==x-1)continue;
 				if(isconnect.find(id)==isconnect.find(id+1))continue;
-				is_connected[i->getY()][i->getX()].right=true;
-				is_connected[i->getY()][i->getX()+1].left=true;
+				is_connected[tot[i].getY()][tot[i].getX()].right=true;
+				is_connected[tot[i].getY()][tot[i].getX()+1].left=true;
 				isconnect.add(id,id+1);
 				break;
 			}
