@@ -3,7 +3,8 @@
 using namespace std;
 void Maze::setSize(Point size)
 {
-    this->size=size;
+    this->size.x=size.getX();
+    this->size.y=size.getY();
 }
 Point Maze::getStartLoc()
 {
