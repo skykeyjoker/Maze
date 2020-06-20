@@ -6,6 +6,7 @@
 #include "TargetPoint.h"
 #include "player.h"
 #include "Maze.h"
+#include "pushbtn.h"
 #include <QKeyEvent>
 #include <QDebug>
 #include <QObject>
