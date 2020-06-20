@@ -20,7 +20,7 @@ GameScene::GameScene(QString bgPic)
     this->player = new Player(Point(0, 0), ":/Resource/slime3jump.gif");
     this->player->setParent(this);
     Maze *maze = new Maze();
-    maze->setsize(Point(3,3));
+    maze->setSize(Point(3, 3));
     maze->setParent(this);
     maze->makeMaze();
     maze->move(200, 200);
