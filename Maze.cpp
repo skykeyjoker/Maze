@@ -98,21 +98,21 @@ void Maze::makeMaze()
 			if(!is_connected[i][j].right)ck+=8;
 			Type t;
             //qDebug()<<i<<' '<<j<<' '<<ck<<endl;
-            if(ck==0)walls[i][j].type=t.all;
-			if(ck==1)walls[i][j].type=t.up;
-			if(ck==2)walls[i][j].type=t.down;
-			if(ck==3)walls[i][j].type=t.updown;
-			if(ck==4)walls[i][j].type=t.left;
-			if(ck==5)walls[i][j].type=t.upleft;
-			if(ck==6)walls[i][j].type=t.downleft;
-			if(ck==7)walls[i][j].type=t.noright;
-			if(ck==8)walls[i][j].type=t.right;
-			if(ck==9)walls[i][j].type=t.upright;
-			if(ck==10)walls[i][j].type=t.downright;
-			if(ck==11)walls[i][j].type=t.noleft;
-			if(ck==12)walls[i][j].type=t.leftright;
-			if(ck==13)walls[i][j].type=t.nodown;
-			if(ck==14)walls[i][j].type=t.noup;
+            if(ck==0)walls[j][i].type=t.all;
+			if(ck==1)walls[j][i].type=t.up;
+			if(ck==2)walls[j][i].type=t.down;
+			if(ck==3)walls[j][i].type=t.updown;
+			if(ck==4)walls[j][i].type=t.left;
+			if(ck==5)walls[j][i].type=t.upleft;
+			if(ck==6)walls[j][i].type=t.downleft;
+			if(ck==7)walls[j][i].type=t.noright;
+			if(ck==8)walls[j][i].type=t.right;
+			if(ck==9)walls[j][i].type=t.upright;
+			if(ck==10)walls[j][i].type=t.downright;
+			if(ck==11)walls[j][i].type=t.noleft;
+			if(ck==12)walls[j][i].type=t.leftright;
+			if(ck==13)walls[j][i].type=t.nodown;
+			if(ck==14)walls[j][i].type=t.noup;
 
 		}
     }
