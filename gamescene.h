@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "scene.h"
 #include "player.h"
+#include "Wall.h"
 
 class GameScene : public Scene
 {
@@ -11,6 +12,7 @@ class GameScene : public Scene
 public:
     GameScene(QString bgPic = "");
     Player *player;
+    Wall ***w;
     void moveUp();
     void moveDown();
     void moveLeft();
